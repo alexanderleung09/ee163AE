@@ -27,8 +27,17 @@ public class client1 {
 			while (sent <= PacketNum){
 				DataOutputStream Packet = new DataOutputStream(socket.getOutputStream());
 				Packet.writeInt(sent);							//send the number of packet to the server
+				System.out.println("the sending number is " + sent);
+				
+				DataInputStream ReturnPacket = new DataInputStream(socket.getInputStream());
+				int ACKnum = ReturnPacket.readInt();							//read the ACK number
+				System.out.println("the ack number is " + ACKnum);
+				if (ACKnum == sent){
+					sent = sent + 1;
+				}
 				
 			}
+
 		}catch(Exception e){e.getStackTrace();}
 		
 	}
