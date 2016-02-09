@@ -47,7 +47,7 @@ public class server1 {
 					lastAct = lastAct + 1;
 				}
 			}
-			System.out.println("the receiving process is finished");
+			System.out.println("the receiving process is finished111");
 			
 		}catch(Exception e){e.getStackTrace();}
 	}
